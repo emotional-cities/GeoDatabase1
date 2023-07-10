@@ -1,0 +1,6 @@
+Django
+requests
+pandas
+geopandas
+folium
+mysql-connector

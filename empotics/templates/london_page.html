@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Layers Page</title>
+    <style>
+        body {
+            background-image: url("{% static 'maps/media/emo.png' %}");
+            background-size: cover;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        form {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="{% url 'checkbox_page' %}">
+        CHOOSE THE LAYERS
+        {% csrf_token %}
+        {% for layer, caption in meta %}
+            <label for="option{{ forloop.counter }}">
+                <input type="checkbox" id="option{{ forloop.counter }}" name="options" value="{{ layer }}"> {{ caption }}
+            </label><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
