@@ -1,6 +1,6 @@
 # eMOTIONALCities
 -empotics is for the webpage
-# Django Project Local Hosting Guide
+# eMOTIONALCities Project Local Hosting Guide
 
 This guide provides instructions on how to host the project locally, both with and without Docker. Choose the appropriate section based on your preferred method.
 
