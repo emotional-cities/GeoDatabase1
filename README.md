@@ -4,6 +4,38 @@
 
 This guide provides instructions on how to host the project locally, both with and without Docker. Choose the appropriate section based on your preferred method.
 
+## Hosting without Docker 
+
+### Prerequisites
+
+- Python 3.x installed on your machine
+- `virtualenv` package installed (optional but recommended)
+- Installing Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+  
+### Instructions
+
+1. **Clone the repository:**
+
+   ```shell
+      git clone <repository_url>
+   ```
+
+   
+2. **Navigate to the project directory:**
+
+   ```shell
+      cd <project_directory>
+   ```
+   
+3. **Create and activate a virtual environment:**
+
+```shell
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+
+```
 ## Hosting with Docker
 
 ### Prerequisites
@@ -39,36 +71,5 @@ cd <project_directory>
 
 Open a web browser and visit [http://localhost:8000](http://localhost:8000) to access the emotional cities app running inside the Docker container.
 
-## Hosting without Docker
-
-### Prerequisites
-
-- Python 3.x installed on your machine
-- `virtualenv` package installed (optional but recommended)
-
-### Instructions
-
-1. **Clone the repository:**
-
-   ```shell
-      git clone <repository_url>
-   ```
-
-   
-2. **Navigate to the project directory:**
-
-   ```shell
-      cd <project_directory>
-   ```
-   
-3. **Create and activate a virtual environment (optional):**
-
-```shell
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python manage.py runserver
-
-```
 
 Open a web browser and visit http://localhost:8000 to access your locally hosted emotional cities app.
