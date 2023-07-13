@@ -7,10 +7,15 @@ This guide provides instructions on how to host the project locally, both with a
 ## Hosting without Docker 
 
 ### Prerequisites
-
-- Python 3.x installed on your machine: https://www.python.org/downloads/
-- `virtualenv` package installed (optional but recommended)
 - Installing Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+- Python 3.x installed on your machine: https://www.python.org/downloads/
+- Run the installer from Windows Explorer
+    Check the Add Python 3.8 to Path check box
+    Click Customize installation
+    All Optional Features should already be checked; click Next
+    Check Install for all users, then click Install
+- `virtualenv` package installed (optional but recommended)
+
   
 ### Instructions
 
