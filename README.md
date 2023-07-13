@@ -15,19 +15,21 @@ This guide provides instructions on how to host the project locally, both with a
 ### Instructions
 
 1. **Clone the repository:**
+On windows OS run Git Bash
+On Mac OS & Linux you can use the shell
 
    ```shell
-      git clone <repository_url>
+      git clone https://github.com/emotional-cities/GeoDatabase1
    ```
 
    
-2. **Navigate to the project directory:**
+1. **Navigate to the project directory:**
 
    ```shell
       cd <project_directory>
    ```
    
-3. **Create and activate a virtual environment:**
+2. **Create and activate a virtual environment:**
 
 ```shell
 virtualenv venv
