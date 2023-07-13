@@ -8,7 +8,7 @@ This guide provides instructions on how to host the project locally, both with a
 
 ### Prerequisites
 
-- Python 3.x installed on your machine
+- Python 3.x installed on your machine: https://www.python.org/downloads/
 - `virtualenv` package installed (optional but recommended)
 - Installing Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
   
