@@ -9,6 +9,8 @@ from folium import plugins
 from folium import Map, FeatureGroup, Marker, LayerControl
 from branca.element import MacroElement
 from jinja2 import Template
+import branca.colormap as cm
+import branca
 
 class BindColormap(MacroElement):
     def __init__(self, layer, colormap):
@@ -142,7 +144,7 @@ def get_list_strings(layer,row_name):
     row=get_row(layer=layer,row_name=row_name)
     cleaned_row = row.replace('[', '').replace(']', '').replace('\'', '')
     elements = cleaned_row.split(',')
-    return elements
+    return [element.strip() for element in elements]
 
 def get_layers(city):
     """
@@ -211,6 +213,7 @@ def create_map(params,long,lat): #should automize getting the long and the lat
         fg = folium.FeatureGroup(name=caption, overlay=False)
         Thresholds=get_list_nums(key,'Thresholds')
         Colors=get_list_strings(key,'Colors')
+        indexes=sorted(list(set(Thresholds)))
         #style=get_style_2(key,Thresholds,Colors)
         i=0
         for feature in geojson_data:
@@ -223,9 +226,12 @@ def create_map(params,long,lat): #should automize getting the long and the lat
                     geoj=folium.GeoJson(feature,style_function=style)
                     folium.features.GeoJsonPopup(fields=[value],aliases=['Mean Value'],labels=True,localize=True).add_to(geoj)
                     fg.add_child(geoj)
+        scale=branca.colormap.StepColormap(Colors[1:],indexes,vmin=min(indexes),vmax=max(indexes),caption=caption)
                                             
         feature_groups.append(fg)
         m.add_child(fg)
+        m.add_child(scale)
+        m.add_child(BindColormap(fg,scale))
     
     m.add_child(folium.map.LayerControl('bottomleft', collapsed=False))
     return m
