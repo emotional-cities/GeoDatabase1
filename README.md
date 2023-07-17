@@ -1,10 +1,53 @@
 # eMOTIONALCities
--empotics is for the webpage
+
 # eMOTIONALCities Project Local Hosting Guide
 
-This guide provides instructions on how to host the project locally, both with and without Docker. Choose the appropriate section based on your preferred method.
+This guide provides instructions on how to host the project locally, both without Docker (option A) and with Docker (option B). Choose the appropriate section based on your preferred method.
 
-## Hosting with Docker
+## A. Hosting without Docker 
+
+### Prerequisites
+- Installing Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+- Installing Python 3.x on your machine: https://www.python.org/downloads/
+  
+  on windows OS:
+    1. Run the installer from Windows Explorer
+    2. Check the Add Python 3.8 to Path check box
+    3. Click Customize installation
+    4. All Optional Features should already be checked; click Next
+    5. Check Install for all users, then click Install
+         
+### Instructions
+
+1. **Clone the repository:**
+On windows OS run Git Bash
+On Mac OS & Linux you can use the shell
+
+   ```shell
+      git clone https://github.com/emotional-cities/GeoDatabase1
+   ```
+
+   
+2. **Navigate to the project directory: (you can locate the directory where GitHub is installed)**
+
+   ```shell
+      cd <project_directory>
+   ```
+   example: cd Users/name/OneDrive/Documents/GitHub/GeoDatabase1/empotics
+3. **Install requirements:**
+
+```shell
+pip install -r req.txt
+
+
+```
+4. **Run the serve:**
+
+```shell
+python manage.py runserver
+
+```
+## B. Hosting with Docker
 
 ### Prerequisites
 
@@ -39,36 +82,5 @@ cd <project_directory>
 
 Open a web browser and visit [http://localhost:8000](http://localhost:8000) to access the emotional cities app running inside the Docker container.
 
-## Hosting without Docker
-
-### Prerequisites
-
-- Python 3.x installed on your machine
-- `virtualenv` package installed (optional but recommended)
-
-### Instructions
-
-1. **Clone the repository:**
-
-   ```shell
-      git clone <repository_url>
-   ```
-
-   
-2. **Navigate to the project directory:**
-
-   ```shell
-      cd <project_directory>
-   ```
-   
-3. **Create and activate a virtual environment (optional):**
-
-```shell
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python manage.py runserver
-
-```
 
 Open a web browser and visit http://localhost:8000 to access your locally hosted emotional cities app.
